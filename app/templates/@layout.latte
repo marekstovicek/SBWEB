@@ -1,0 +1,159 @@
+{**
+ * @param string   $basePath web base path
+ * @param array    $flashes  flash messages
+*}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>{ifset title}Skipping Boys - {include title|stripHtml}{/ifset}</title>
+        <meta name="description" content="{include description|stripHtml}" />
+
+        <script type="text/javascript">
+
+        </script>
+
+
+
+        <meta name="viewport" content="width=device-width">
+        <!-- Mobile Specifics -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="MobileOptimized" content="320"/>   
+
+        <!-- Mobile Internet Explorer ClearType Technology -->
+        <!--[if IEMobile]>  <meta http-equiv="cleartype" content="on">  <![endif]-->
+
+        <!-- Bootstrap -->
+        <link href="{$basePath}/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Main Style -->
+        <link href="{$basePath}/css/main.css" rel="stylesheet">
+
+        <!-- Supersized -->
+        <link href="{$basePath}/css/supersized.css" rel="stylesheet">
+        <link href="{$basePath}/css/supersized.shutter.css" rel="stylesheet">
+
+        <!-- FancyBox -->
+        <link href="{$basePath}/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+
+        <!-- Font Icons -->
+        <link href="{$basePath}/css/fonts.css" rel="stylesheet">
+
+        <!-- Shortcodes -->
+        <link href="{$basePath}/css/shortcodes.css" rel="stylesheet">
+
+        <!-- Responsive -->
+        <link href="{$basePath}/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="{$basePath}/css/responsive.css" rel="stylesheet">
+
+        <!-- Supersized -->
+        <link href="{$basePath}/css/supersized.css" rel="stylesheet">
+        <link href="{$basePath}/css/supersized.shutter.css" rel="stylesheet">
+
+        <!-- Google Font -->
+        <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900' rel='stylesheet' type='text/css'>
+
+        <!-- Fav Icon -->
+        <link rel="shortcut icon" href="#">
+
+        <link rel="apple-touch-icon" href="#">
+        <link rel="apple-touch-icon" sizes="114x114" href="#">
+        <link rel="apple-touch-icon" sizes="72x72" href="#">
+        <link rel="apple-touch-icon" sizes="144x144" href="#">
+
+        <!-- Modernizr -->
+        <script src="{$basePath}/js/modernizr.js"></script>
+
+        <!-- Analytics -->
+        <script type="text/javascript">
+
+                    var _gaq = _gaq || [];
+                    _gaq.push(['_setAccount', 'Insert Your Code']);
+                    _gaq.push(['_trackPageview']);
+
+                    (function () {
+                        var ga = document.createElement('script');
+                        ga.type = 'text/javascript';
+                        ga.async = true;
+                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(ga, s);
+                    })();
+
+        </script>
+        <!-- End Analytics -->
+        {block head}
+
+        {/block}
+
+    </head>
+
+
+    <body>
+
+        <!-- This section is for Splash Screen -->
+        {ifset slide}
+            {include slide}
+        {/ifset}
+
+        <!-- Header -->
+        <header>
+            <div class="sticky-nav">
+                <a id="mobile-nav" class="menu-nav" href="#menu-nav"></a>
+
+                <div id="logo">
+                    <a id="goUp" href="#home-slider" title="Skipping Boys - Domů">Skipping Boys</a>
+                </div>
+
+                <nav id="menu">
+                    <ul id="menu-nav">
+                        <li {if $active == "default"}class="current"{/if}><a n:href=":Core:Page:default">ÚVOD</a></li>
+                        <li><a {if $active == "default"}class="current"{/if} n:href=":Core:Page:show">VYSTOUPENÍ</a></li>
+                        <li><a {if $active == "default"}class="current"{/if} n:href=":Core:Page:gallery">REFERENCE</a></li>
+                        <li><a {if $active == "default"}class="current"{/if} n:href=":Core:Page:about">O NÁS</a></li>
+                        <li><a {if $active == "default"}class="current"{/if} n:href=":Core:Page:contact">KONTAKT</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+        <!-- End Header -->
+        {include content}
+
+        {ifset tie}
+            {include tie}
+            
+        <!-- Footer -->
+        {/ifset}
+        <footer>
+            <p class="credits">&copy;2013 Brushed. <a href="http://themes.alessioatzeni.com/html/brushed/" title="Brushed | Responsive One Page Template">Brushed Template</a> by <a href="http://www.alessioatzeni.com/" title="Alessio Atzeni | Web Designer &amp; Front-end Developer">Alessio Atzeni</a></p>
+             <a href="http://www.toplist.cz/" target="_top"><img src="http://toplist.cz/dot.asp?id=1201073" border="0" alt="TOPlist" width="1" height="1"/></a>
+        </footer>
+        <!-- End Footer -->
+
+        <!-- Back To Top -->
+        <a id="back-to-top" href="#">
+            <i class="font-icon-arrow-simple-up"></i>
+        </a>
+        <!-- End Back to Top -->
+
+        {block scripts}
+        <!-- Js -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> <!-- jQuery Core -->
+        <script src="js/bootstrap.min.js"></script> <!-- Bootstrap -->
+        <script src="js/supersized.3.2.7.min.js"></script> <!-- Slider -->
+        <script src="js/waypoints.js"></script> <!-- WayPoints -->
+        <script src="js/waypoints-sticky.js"></script> <!-- Waypoints for Header -->
+        <script src="js/jquery.isotope.js"></script> <!-- Isotope Filter -->
+        <script src="js/jquery.fancybox.pack.js"></script> <!-- Fancybox -->
+        <script src="js/jquery.fancybox-media.js"></script> <!-- Fancybox for Media -->
+        <script src="js/jquery.tweet.js"></script> <!-- Tweet -->
+        <script src="js/plugins.js"></script> <!-- Contains: jPreloader, jQuery Easing, jQuery ScrollTo, jQuery One Page Navi -->
+        <script src="js/main.js"></script> <!-- Default JS -->
+        <!-- End Js -->
+        {/block}
+       
+    </body>
+</html>
