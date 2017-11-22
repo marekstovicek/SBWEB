@@ -49,7 +49,7 @@ class ParagraphManager extends BaseManager{
      * @return paragraph
      */
     public function getParagraph ($id) {
-        return $this->database->table(self::TABLE_NAME)->where(self::COLUMN_ID, $id);
+        return $this->database->table(self::TABLE_NAME)->where(self::COLUMN_ID, $id)->fetch();
     }
     
     

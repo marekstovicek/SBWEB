@@ -6,6 +6,7 @@ use App\CoreModule\Model\PageManager;
 use App\CoreModule\Model\ShowManager;
 use App\CoreModule\Model\VideoManager;
 use App\CoreModule\Model\GalleryManager;
+use App\CoreModule\Model\ParagraphManager;
 use App\CoreModule\Components\ShowsComponent;
 use App\Presenters\BasePresenter;
 use Nette\Application\UI\Form;
@@ -31,17 +32,21 @@ class PagePresenter extends BasePresenter{
     protected $videoManager;
     protected $showManager;
     protected $galleryManager;
+    protected $paragraphManager;
     
     public function __construct(PageManager $pageManager,
                                 ShowManager $showManager,
                                 VideoManager $videoManager,
-                                GalleryManager $galleryManager
+                                GalleryManager $galleryManager,
+                                ParagraphManager $paragraphmanager
+            
     ) {
         parent::__construct();
         $this->pageManager = $pageManager;
         $this->showManager = $showManager;
         $this->videoManager = $videoManager;
         $this->galleryManager = $galleryManager;
+        $this->paragraphManager = $paragraphmanager;
     }
     
     public function renderDefault()
@@ -49,6 +54,7 @@ class PagePresenter extends BasePresenter{
         $url = self::DEFAULT_URL;
         if(!($page = $this->pageManager->getPage($url))) throw new BadRequestException();
         $this->template->page = $page;
+        $this->template->paragpraph = $this->paragraphManager->getParagraph(1);
         $videos = $this->videoManager->getVideos($url);
         $videosArr = array();
         foreach($videos as $video){

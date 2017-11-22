@@ -13,6 +13,7 @@ services:
                         - allow(%admin%, %page%)
 
     - App\CoreModule\Model\PageManager
+    - App\CoreModule\Model\ParagraphManager
     - App\CoreModule\Model\ShowManager
     - App\CoreModule\Model\VideoManager
     - App\CoreModule\Model\GalleryManager

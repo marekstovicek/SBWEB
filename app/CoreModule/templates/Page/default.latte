@@ -29,16 +29,15 @@
 {block content}
 
 
-
 <div id="work" class="page">
 	<div class="container">
     	<!-- Title Page -->
         <div class="row">
-            <div class="span6">
+            <div class="span{$paragpraph->width}">
                 <div class="title-page">
-                    <h2 class="title">Vítáme Vás na stránkách Skipping Boys!</h2>
+                    <h2 class="title">{$paragpraph->title}</h2>
                     <br />
-                    <h3 class="title-description">{$page->content|noescape}</h3>
+                    <h3 class="title-description">{$paragpraph->content|noescape}</h3>
                    
                {if isset($video)}
                    {foreach $video as $vid}
